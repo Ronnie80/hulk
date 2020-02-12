@@ -22,7 +22,11 @@ public class UserLoginInterceptor extends HandlerInterceptorAdapter {
             request.getRequestDispatcher("/common/403.jsp");
             return false;
         }
-
         return super.preHandle(request, response, handler);
     }
+
+    public void add() {
+        // master 上的代码
+    }
+
 }
