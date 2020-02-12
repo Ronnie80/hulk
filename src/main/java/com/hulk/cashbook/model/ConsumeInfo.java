@@ -2,7 +2,7 @@ package com.hulk.cashbook.model;
 
 import java.util.Date;
 
-import com.vo.ConsumeNotes;
+import com.hulk.cashbook.vo.ConsumeNotes;
 
 /**
  * Created by Jacky on 2017/9/6.
