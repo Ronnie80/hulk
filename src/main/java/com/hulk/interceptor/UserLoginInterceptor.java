@@ -29,4 +29,8 @@ public class UserLoginInterceptor extends HandlerInterceptorAdapter {
         // master 上的代码
     }
 
+    public void test() {
+        // 新建b-0215
+    }
+
 }

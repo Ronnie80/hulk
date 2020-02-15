@@ -501,8 +501,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="sales-chart  card-content "  id = "month-charts" >
-                                    <canvas id="month-chart"></canvas>
+                                <div class="sales-chart  card-content" >
+                                    <div id="month-chart" style="width:742px; height:371px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -913,65 +913,67 @@
                 }
         ]
     };
-    $.get('<%=request.getContextPath() %>/consume/broken').done(function (data) {
-        var monthList = data.data.monthList;
-        var catList = data.data.catList;
-        var series = [];
-        var name_arr = [];
-        for(var i = 0 ;i < catList.length; i++) {
-            var id = catList[i].id;
-            var body = {};
-            switch (id) {
-                case 100 :
-                    body.name = "总支出"
-                    break;
-                case 1 :
-                    body.name = "白条"
-                    break;
-                case 2 :
-                    body.name = "花呗"
-                    break;
-                case 3 :
-                    body.name = "余额宝"
-                    break;
-                case 4 :
-                    body.name = "现金"
-                    break;
-                case 6 :
-                    body.name = "捐款"
-                    break;
-                default :
-                    body.name = "其他"
-            }
-            body.type = 'line';
-            body.stack = '总量';
-            body.areaStyle={normal: {}}
-            body.data = catList[i].body;
-            series.push(body);
-            name_arr.push(body.name);
-        }
-
-        // 填入数据
-        monthChart.setOption({
-            legend: {
-                data: name_arr
-            },
-            xAxis: [
-                {
-                    data: monthList
-                }
-            ],
-            series: series
-        });
-    });
+//    $.get('<%=request.getContextPath() %>/consume/broken').done(function (data) {
+//        var monthList = data.data.monthList;
+//        var catList = data.data.catList;
+//        var series = [];
+//        var name_arr = [];
+//        for(var i = 0 ;i < catList.length; i++) {
+//            var id = catList[i].id;
+//            var body = {};
+//            switch (id) {
+//                case 100 :
+//                    body.name = "总支出"
+//                    break;
+//                case 1 :
+//                    body.name = "白条"
+//                    break;
+//                case 2 :
+//                    body.name = "花呗"
+//                    break;
+//                case 3 :
+//                    body.name = "余额宝"
+//                    break;
+//                case 4 :
+//                    body.name = "现金"
+//                    break;
+//                case 6 :
+//                    body.name = "捐款"
+//                    break;
+//                default :
+//                    body.name = "其他"
+//            }
+//            body.type = 'line';
+//            body.stack = '总量';
+//            body.areaStyle={normal: {}}
+//            body.data = catList[i].body;
+//            series.push(body);
+//            name_arr.push(body.name);
+//        }
+//
+//        // 填入数据
+//        monthChart.setOption({
+//            legend: {
+//                data: name_arr
+//            },
+//            xAxis: [
+//                {
+//                    data: monthList
+//                }
+//            ],
+//            series: series
+//        });
+//    });
     monthChart.setOption(monthOption);
-
-
-
-    window.onresize = function(){
+    console.log(window.location.host);
+    console.log(self.location.href);
+    console.log(document.URL);
+    console.log(document.location);
+    window.onresize = monthChart.resize;
+//    window.onresize = function(){
 //alert(monthChart.resize());
 //        monthChart.resize();
-        document.getElementById(" id = ")
+//        document.getElementById(" id = ")
 
 //        myChart2.resize();
 //
@@ -979,7 +981,7 @@
 //
 //        myChart4.resize();
 
-    }
+//    }
 </script>
 </body>
 

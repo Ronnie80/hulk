@@ -419,8 +419,8 @@
 
 
     window.onload = function () {
-        var ctx = document.getElementById("sales-chart").getContext("2d");
-        window.myLine = new Chart(ctx, sales);
+        //var ctx = document.getElementById("sales-chart").getContext("2d");
+        //window.myLine = new Chart(ctx, sales);
 
         var ctx = document.getElementById("team-chart").getContext("2d");
         window.myLine = new Chart(ctx, team);
